@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
 
-    const navOptions = <>
+    const [see , close] = useState()
+    
+
+    const navOptions = < >
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allEqui'>All Equi</NavLink></li>
         <li><NavLink to='/addEqui'>Add Equi</NavLink></li>
@@ -35,7 +39,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="">
-                        <a className="btn">SignUp</a>
+                       <Link to ='/login'>Login</Link>
                     </div>
                 </div>
             </div>

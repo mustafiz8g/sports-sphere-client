@@ -6,8 +6,10 @@ import { router } from './Routes/routes'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  
+
+    <div className="font-poppins">
       <RouterProvider router={router} />
-   
+    </div>
+
   </StrictMode>,
 )
