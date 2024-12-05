@@ -1,12 +1,23 @@
-import { useState } from "react";
+
+import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 const Navbar = () => {
 
-    const [see , close] = useState()
-    
+   const {user,logOutUser} = useContext(AuthContext);
+
+    const handleLogOut =() => {
+        logOutUser()
+        .then(() => {
+            console.log('user log out success')
+        })
+        .catch(err => {
+            console.log('Error', err.message)
+        })
+    } 
 
     const navOptions = < >
         <li><NavLink to='/'>Home</NavLink></li>
@@ -39,7 +50,10 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="">
-                       <Link to ='/login'>Login</Link>
+                      {
+                        user ?  <a onClick={handleLogOut}>Log Out</a> :  <Link to ='/login'>Login</Link>
+                      }
+                      
                     </div>
                 </div>
             </div>

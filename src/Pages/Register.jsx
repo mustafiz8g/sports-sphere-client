@@ -2,14 +2,76 @@
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaEyeSlash } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 
 
 const Register = () => {
-    const [see, close ] = useState();
-    const toggle = (i) => {
-        close(i)
+
+
+    const { registerUser } = useContext(AuthContext);
+    const [error, setError] = useState()
+    const [success, setSuccess] = useState(false)
+
+    const [showPassword, setShowPassword] = useState(false);
+
+
+    const handleRegister = e => {
+
+
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const terms = form.terms.checked;
+        // console.log(terms)
+
+        //reset error
+        setError('')
+        setSuccess(false)
+
+        if(!terms){
+            setError('Please accept our terms & conditon');
+            return;
+        }
+
+
+        // password validation 
+        if (password.length < 6) {
+            setError('password should be 6 cahharacters or longer')
+            return;
+        }
+        const passwordRegexU = /^(?=.*[A-Z]).+$/
+        const passwordRegexL = /^(?=.*[a-z]).+$/
+
+        if (!passwordRegexU.test(password)) {
+            setError('At least one Caracter Uppercase')
+            return;
+        }
+        if (!passwordRegexL.test(password)) {
+            setError('At least one Caracter Lowercase')
+            return;
+        }
+       
+
+        // console.log(name, photo, email, password)
+        registerUser(email, password)
+            .then(result => {
+                console.log('user created at firebase', result.user)
+                setSuccess(true)
+
+
+            })
+            .catch(err => {
+                setError(err.message)
+                setSuccess(false)
+
+            })
+
+
     }
 
     return (
@@ -17,7 +79,7 @@ const Register = () => {
 
             <div className="p-9  w-full max-w-sm  shadow-2xl">
                 <h1 className="font-semibold text-3xl text-center pb-4">Register</h1>
-                <form >
+                <form onSubmit={handleRegister}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text font-semibold">Name</span>
@@ -57,29 +119,43 @@ const Register = () => {
                         </label>
                         <input
                             name="password"
-                            type= {see ? 'text' : 'password'}
+                            type={showPassword ? 'text' : 'password'}
                             placeholder="password"
                             className="input input-bordered"
-                            required />
+                            required
+                            autoComplete="current-password"
+                        />
 
 
-                        <div  
-                        onClick={() => toggle(!see)}
-                        className="relative left-[276px] bottom-8">
+                        <div
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="relative left-[276px] bottom-8">
                             {
-                                see ? <MdRemoveRedEye /> : <FaEyeSlash />
+                                showPassword ? <MdRemoveRedEye /> : <FaEyeSlash />
                             }
                         </div>
 
+                        <p className="text-error text-[14px]">{error}</p>
+                        {
+                            success && <p className="text-success text-[14px]">Register successfully</p>
+                        }
 
-                        
                     </div>
+                    <div className="form-control">
+                        <label className="label flex justify-start gap-3  cursor-pointer">
+                            <input 
+                            name="terms"
+                            type="checkbox"  className="checkbox checkbox-primary checkbox-xs" />
+                            <span className="label-text">Accept terms & condition</span>
+                        </label>
+                    </div>
+
                     <div className="form-control mt-4">
                         <button className="btn btn-primary  text-[16px]">Register</button>
                     </div>
 
                     <div>
-                        <p className="text-[14px] mt-3">Already Customer ? <Link to ="/login"><button className="link link-info font-bold">Login</button>
+                        <p className="text-[14px] mt-3">Already Customer ? <Link to="/login"><button className="link link-info font-bold">Login</button>
                         </Link></p>
                     </div>
 
