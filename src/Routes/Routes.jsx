@@ -4,6 +4,8 @@ import Home from "../Pages/Home";
 import Error from "../Pages/Error";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import AddEqui from "../Pages/AddEqui";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +26,15 @@ export const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
     },
+    {
+        path: '/addEqui',
+        element: <PrivateRoute><AddEqui></AddEqui></PrivateRoute>
+    },
+    {
+        path: '/allEqui',
+        element: <Register></Register>
+    },
+
     {
         path: '*',
         element: <Error></Error>

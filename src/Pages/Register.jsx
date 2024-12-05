@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaEyeSlash } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
 import { useContext, useState } from "react";
@@ -10,6 +10,7 @@ import { AuthContext } from "../providers/AuthProvider";
 const Register = () => {
 
 
+    const navigate = useNavigate();
     const { registerUser } = useContext(AuthContext);
     const [error, setError] = useState()
     const [success, setSuccess] = useState(false)
@@ -62,6 +63,9 @@ const Register = () => {
             .then(result => {
                 console.log('user created at firebase', result.user)
                 setSuccess(true)
+                e.target.reset();
+                navigate('/')
+
 
 
             })

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook, FaEyeSlash } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
 import { useContext, useRef, useState } from "react";
@@ -8,12 +8,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const { loginUser, forgetPassword } = useContext(AuthContext);
     const [error, setError] = useState()
     const [showPassword, setShowPassword] = useState(false);
 
     const emailRef = useRef();
+    
 
 
     const handleLogin = e => {
@@ -34,6 +35,8 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 console.log('Login at', result.user)
+                e.target.reset();
+                navigate('/')
             })
             .catch(err => {
                 console.log('Error is', err)

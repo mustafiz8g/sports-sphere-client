@@ -25,11 +25,13 @@ const AuthProvider = ({children}) => {
     }
     // forget password 
     const forgetPassword = (email) => {
+        setLoading(true)
         sendPasswordResetEmail(auth, email)
     }
 
     // logout 
     const logOutUser = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -39,6 +41,7 @@ const AuthProvider = ({children}) => {
       const unSubscribe =  onAuthStateChanged(auth, currentUser => {
             console.log('current user',currentUser)
             setUser(currentUser)
+            setLoading(false)
 
         })
 
