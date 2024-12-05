@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddEqui from "../Pages/AddEqui";
 import PrivateRoute from "./PrivateRoute";
+import MyEqui from "../Pages/MyEqui";
 
 export const router = createBrowserRouter([
     {
@@ -27,12 +28,16 @@ export const router = createBrowserRouter([
         element: <Register></Register>
     },
     {
+        path: '/allEqui',
+        element: <Register></Register>
+    },
+    {
         path: '/addEqui',
         element: <PrivateRoute><AddEqui></AddEqui></PrivateRoute>
     },
     {
-        path: '/allEqui',
-        element: <Register></Register>
+        path: '/myEqui',
+        element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>
     },
 
     {

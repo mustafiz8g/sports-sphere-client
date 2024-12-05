@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
-    const { loginUser, forgetPassword } = useContext(AuthContext);
+    const { loginUser, forgetPassword, loginWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState()
     const [showPassword, setShowPassword] = useState(false);
 
@@ -66,7 +66,16 @@ const Login = () => {
 
     }
 
-
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+        .then(result => {
+            console.log(result.user)
+            navigate('/')
+        })
+        .catch(err => {
+            console.log('Error', err )
+        })
+    }
 
     return (
         <div className="container mx-auto flex justify-center mt-20">
@@ -128,7 +137,7 @@ const Login = () => {
                 <div className="divider "><span className="text-[12px]">OR</span></div>
 
                 <div className="*:w-full space-y-2">
-                    <button className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
+                    <button onClick={handleGoogleLogin} className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
                     <button className=" btn btn-outline btn-sm btn-info">< FaFacebook />Continue with Facebook</button>
 
                     <ToastContainer />

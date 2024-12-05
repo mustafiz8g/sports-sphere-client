@@ -11,7 +11,7 @@ const Register = () => {
 
 
     const navigate = useNavigate();
-    const { registerUser } = useContext(AuthContext);
+    const { registerUser , loginWithGoogle} = useContext(AuthContext);
     const [error, setError] = useState()
     const [success, setSuccess] = useState(false)
 
@@ -76,6 +76,17 @@ const Register = () => {
             })
 
 
+    }
+
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+        .then(result => {
+            console.log(result.user)
+            navigate('/')
+        })
+        .catch(err => {
+            console.log('Error', err )
+        })
     }
 
     return (
@@ -168,7 +179,9 @@ const Register = () => {
                 <div className="divider "><span className="text-[12px]">OR</span></div>
 
                 <div className="*:w-full space-y-2">
-                    <button className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
+                    <button
+                    onClick={handleGoogleLogin} 
+                    className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
                     <button className=" btn btn-outline btn-sm btn-info">< FaFacebook />Continue with Facebook</button>
                 </div>
             </div>

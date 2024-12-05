@@ -23,9 +23,12 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/allEqui'>All Equi</NavLink></li>
        {
-        user &&  <li><NavLink to='/addEqui'>Add Equi</NavLink></li>
+        user &&  <> 
+<li><NavLink to='/addEqui'>Add Equi</NavLink></li>
+<li><NavLink to='/myEqui'>My Equi</NavLink></li>
+        </>
        }
-        <li><NavLink to='/myEqui'>My Equi</NavLink></li>
+       
     </>
 
     return (
