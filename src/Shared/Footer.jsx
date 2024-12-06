@@ -7,7 +7,7 @@ const Footer = () => {
 
 
 
-      <footer className="container mx-auto bg-slate-700 footer text-white  p-10 ">
+      <footer className="w-11/12 mx-auto bg-slate-700 footer text-white  p-10 ">
         <nav className="w-56">
         <h1 className="text-4xl text-white text-center">Sport Sphere</h1>
 
@@ -45,7 +45,7 @@ const Footer = () => {
       </footer>
 
       
-      <footer className="container mx-auto footer bg-neutral text-neutral-content items-center p-4 flex flex-col justify-around md:flex-row">
+      <footer className="w-11/12 mx-auto footer bg-neutral text-neutral-content items-center p-4 flex flex-col justify-around md:flex-row">
         <aside className="grid-flow-col items-center">
           <svg
             width="36"

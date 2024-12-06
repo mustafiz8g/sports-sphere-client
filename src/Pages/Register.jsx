@@ -11,7 +11,7 @@ const Register = () => {
 
 
     const navigate = useNavigate();
-    const { registerUser , loginWithGoogle} = useContext(AuthContext);
+    const { registerUser ,setUser, loginWithGoogle , updateUser} = useContext(AuthContext);
     const [error, setError] = useState()
     const [success, setSuccess] = useState(false)
 
@@ -62,7 +62,14 @@ const Register = () => {
         registerUser(email, password)
             .then(result => {
                 console.log('user created at firebase', result.user)
-                setSuccess(true)
+                const user = result.user
+                setSuccess(true);
+                setUser(user)
+                updateUser({
+                    displayName: name,
+                    photoURL : photo
+                })
+
                 e.target.reset();
                 navigate('/')
 
@@ -72,6 +79,7 @@ const Register = () => {
             .catch(err => {
                 setError(err.message)
                 setSuccess(false)
+                
 
             })
 
@@ -90,7 +98,7 @@ const Register = () => {
     }
 
     return (
-        <div className="container mx-auto flex justify-center mt-20">
+        <div className="w-11/12 mx-auto flex justify-center mt-20">
 
             <div className="p-9  w-full max-w-sm  shadow-2xl">
                 <h1 className="font-semibold text-3xl text-center pb-4">Register</h1>

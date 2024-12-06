@@ -1,11 +1,13 @@
+import Slider from "../components/Slider";
 
 
 
 
 const Home = () => {
     return (
-        <div>
-            this is home
+        <div className="w-11/12 mx-auto">
+        
+            <Slider></Slider>
          
         </div>
     );
