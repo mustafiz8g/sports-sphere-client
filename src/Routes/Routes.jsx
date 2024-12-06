@@ -7,6 +7,8 @@ import Register from "../Pages/Register";
 import AddEqui from "../Pages/AddEqui";
 import PrivateRoute from "./PrivateRoute";
 import MyEqui from "../Pages/MyEqui";
+import AllEqui from "../Pages/AllEqui";
+import Details from "../Pages/Details";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +31,8 @@ export const router = createBrowserRouter([
     },
     {
         path: '/allEqui',
-        element: <Register></Register>
+        element: <AllEqui></AllEqui>,
+        loader:() => fetch('http://localhost:4200/equi')
     },
     {
         path: '/addEqui',
@@ -39,6 +42,7 @@ export const router = createBrowserRouter([
         path: '/myEqui',
         element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>
     },
+  
 
     {
         path: '*',

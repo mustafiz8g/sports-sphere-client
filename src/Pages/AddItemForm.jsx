@@ -250,7 +250,7 @@ const AddItemForm = ({ userEmail, userName }) => {
           type="text"
           id="userName"
           name="userName"
-          value={userName}
+          value={userdisplayName}
           readOnly
           className="mt-1 block w-full bg-gray-100 border-gray-300 rounded-md shadow-sm sm:text-sm"
         />
