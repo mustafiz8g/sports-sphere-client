@@ -6,6 +6,7 @@ import { AuthContext } from "../providers/AuthProvider";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from "../Shared/Navbar";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -78,72 +79,75 @@ const Login = () => {
     }
 
     return (
-        <div className="w-11/12 mx-auto flex justify-center mt-20">
-
-            <div className="p-9  w-full max-w-sm  shadow-2xl">
-                <h1 className="font-semibold text-3xl text-center pb-4">Login</h1>
-                <form onSubmit={handleLogin}>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text font-semibold">Email</span>
-                        </label>
-                        <input
-                            name="email"
-                            type="email"
-                            ref={emailRef}
-                            placeholder="email"
-                            className="input input-bordered"
-                            required />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text font-semibold">Password</span>
-                        </label>
-                        <input
-                            name="password"
-                            type={showPassword ? 'text' : 'password'}
-                        
-                            placeholder="password"
-                            className="input input-bordered"
-                            required />
-
-
-                        <div
-                            onClick={() => setShowPassword(!showPassword)}
-                            className="relative left-[276px] bottom-8">
-                            {
-                                showPassword ? <MdRemoveRedEye /> : <FaEyeSlash />
-                            }
-                        </div>
-
-                        <p className="text-error text-[14px]">{error}</p>
+       <>
+         <Navbar></Navbar>
+       <div className="w-11/12 mx-auto flex justify-center mt-20">
+          
+          <div className="p-9  w-full max-w-sm  shadow-2xl">
+              <h1 className="font-semibold text-3xl text-center pb-4">Login</h1>
+              <form onSubmit={handleLogin}>
+                  <div className="form-control">
+                      <label className="label">
+                          <span className="label-text font-semibold">Email</span>
+                      </label>
+                      <input
+                          name="email"
+                          type="email"
+                          ref={emailRef}
+                          placeholder="email"
+                          className="input input-bordered"
+                          required />
+                  </div>
+                  <div className="form-control">
+                      <label className="label">
+                          <span className="label-text font-semibold">Password</span>
+                      </label>
+                      <input
+                          name="password"
+                          type={showPassword ? 'text' : 'password'}
+                      
+                          placeholder="password"
+                          className="input input-bordered"
+                          required />
 
 
-                        <label onClick={handleForgetPassword} className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
-                    </div>
-                    <div className="form-control mt-4">
-                        <button className="btn btn-primary  text-[16px]">Login</button>
-                    </div>
+                      <div
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="relative left-[276px] bottom-8">
+                          {
+                              showPassword ? <MdRemoveRedEye /> : <FaEyeSlash />
+                          }
+                      </div>
 
-                    <div>
-                        <p className="text-[14px] mt-3">dont have an account? <Link to="/register"><button className="link link-info font-bold">register</button>
-                        </Link></p>
-                    </div>
+                      <p className="text-error text-[14px]">{error}</p>
 
-                </form>
 
-                <div className="divider "><span className="text-[12px]">OR</span></div>
+                      <label onClick={handleForgetPassword} className="label">
+                          <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                      </label>
+                  </div>
+                  <div className="form-control mt-4">
+                      <button className="btn btn-primary  text-[16px]">Login</button>
+                  </div>
 
-                <div className="*:w-full space-y-2">
-                    <button onClick={handleGoogleLogin} className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
-                    <button className=" btn btn-outline btn-sm btn-info">< FaFacebook />Continue with Facebook</button>
+                  <div>
+                      <p className="text-[14px] mt-3">dont have an account? <Link to="/register"><button className="link link-info font-bold">register</button>
+                      </Link></p>
+                  </div>
 
-                    <ToastContainer />
-                </div>
-            </div>
-        </div>
+              </form>
+
+              <div className="divider "><span className="text-[12px]">OR</span></div>
+
+              <div className="*:w-full space-y-2">
+                  <button onClick={handleGoogleLogin} className="  btn btn-outline btn-sm "><FaGoogle />Continue with Google</button>
+                  <button className=" btn btn-outline btn-sm btn-info">< FaFacebook />Continue with Facebook</button>
+
+                  <ToastContainer />
+              </div>
+          </div>
+      </div>
+       </>
     );
 };
 

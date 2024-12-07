@@ -2,12 +2,12 @@ import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 
-import { MdDeleteForever } from "react-icons/md";
 
 
 const AllEqui = () => {
 
     const equis = useLoaderData()
+    
 
 
     return (
@@ -66,7 +66,7 @@ const AllEqui = () => {
 
                             <td className="text-center align-middle  ">BDT {equi.price}</td>
                             <th className="text-center align-middle  ">
-                               <Link to = {`equi/${equi._id}`}>
+                               <Link to = {`${equi._id}`}>
                                <button className="btn btn-ghost btn-xs">details</button>
                                </Link>
                             </th>

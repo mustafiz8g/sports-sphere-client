@@ -40,9 +40,14 @@ export const router = createBrowserRouter([
     },
     {
         path: '/myEqui',
-        element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>
+        element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>,
+        loader:() => fetch('http://localhost:4200/equi')
     },
-  
+    {
+        path: '/allEqui/:id',
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader : ({params}) => fetch(`http://localhost:4200/equi/${params.id}`)
+    },
 
     {
         path: '*',
