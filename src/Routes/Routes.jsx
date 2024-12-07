@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyEqui from "../Pages/MyEqui";
 import AllEqui from "../Pages/AllEqui";
 import Details from "../Pages/Details";
+import UpdateEqui from "../Pages/UpdateEqui";
 
 export const router = createBrowserRouter([
     {
@@ -43,10 +44,20 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>,
         loader:() => fetch('http://localhost:4200/equi')
     },
+
+    // for details 
     {
         path: '/allEqui/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:4200/equi/${params.id}`)
+    },
+    
+    // for updated
+    {
+        path: '/updateEqui/:id',
+        element : <PrivateRoute><UpdateEqui></UpdateEqui></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:4200/equi/${params.id}`)
+
     },
 
     {

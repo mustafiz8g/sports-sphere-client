@@ -2,11 +2,13 @@ import { useLoaderData } from "react-router-dom";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 import MyEquiCard from "./MyEquiCard";
+import { useState } from "react";
 
 
 
 const MyEqui = () => {
-    const equis = useLoaderData()
+    const loadedEquis = useLoaderData()
+    const [equis, setEquis] = useState(loadedEquis);
     
     return (
         <div>
@@ -15,7 +17,12 @@ const MyEqui = () => {
             
             <div>
                 {
-                    equis.map(equi => <MyEquiCard key={equi._id} equi = {equi}></MyEquiCard>)
+                    equis.map(equi => <MyEquiCard 
+                        key={equi._id} 
+                        equi = {equi}
+                        equis = {equis}
+                        setEquis = {setEquis}
+                        ></MyEquiCard>)
                 }
             </div>
             
