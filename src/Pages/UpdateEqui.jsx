@@ -3,12 +3,13 @@ import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../providers/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 
 
 const UpdateEqui = () => {
-
+    
+    const navigate = useNavigate()
     const { user } = useContext(AuthContext)
 
     const equi = useLoaderData();
@@ -45,9 +46,14 @@ const UpdateEqui = () => {
         console.log(data)
         if(data.modifiedCount){
             Swal.fire({
-                title: "Equipment Updated Successfully",
-                icon: "success"
+              
+                icon: "success",
+                title: "Updated Successfully",
+                showConfirmButton: false,
+                timer: 1500
               });
+              navigate(-1)
+              
           }
       })
 
@@ -186,7 +192,7 @@ const UpdateEqui = () => {
                                 className="input  w-full"
                             />
                         </div>
-                    <input className="col-span-2 btn btn-primary w-full mt-6 bg-gray-800 hover:bg-gray-700 text-white" type="submit" value="Add Product" />
+                    <input className="col-span-2 btn btn-primary w-full mt-6 bg-gray-800 hover:bg-gray-700 text-white" type="submit" value="Update" />
                     </div>
 
                 </form>

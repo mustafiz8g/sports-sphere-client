@@ -22,12 +22,8 @@ const Navbar = () => {
     const navOptions = < >
         <li><NavLink className='font-bold text-base' to='/'>Home</NavLink></li>
         <li><NavLink  className='font-bold text-base' to='/allEqui'>All Equi</NavLink></li>
-        {
-            user && <>
-                <li><NavLink className='font-bold text-base'  to='/addEqui'>Add  Equi</NavLink></li>
-                <li><NavLink  className='font-bold text-base' to='/myEqui'>My Equi</NavLink></li>
-            </>
-        }
+        <li><NavLink className='font-bold text-base'  to='/addEqui'>Add  Equi</NavLink></li>
+        <li><NavLink  className='font-bold text-base' to='/myEqui'>My Equi</NavLink></li>
 
     </>
 
