@@ -47,7 +47,7 @@ const MyEquiCard = ({ equi, equis, setEquis }) => {
          
 
          <div className="card  bg-base-100 border"> 
-            <figure className="px-10 pt-10">
+            <figure className="px-6 pt-6">
                 <img src={image} alt={itemName} className="rounded-xl h-[280px] " />
             </figure>
 
@@ -76,7 +76,7 @@ const MyEquiCard = ({ equi, equis, setEquis }) => {
 
                 {/* Buttons */}
                 <div className="flex gap-3 mt-4 space-x-2 justify-center">
-          <button className="btn btn-sm btn-outline btn-primary">Details</button>
+              
             <button className="btn btn-outline btn-info btn-sm w-10">
               <AiFillEye />
             </button>

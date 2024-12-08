@@ -3,16 +3,18 @@
 
 const Categories = () => {
     const cards = [
-        { id: 1, text: "Card 1", color: "bg-blue-500" },
-        { id: 2, text: "Card 2", color: "bg-orange-500" },
-        { id: 3, text: "Card 3", color: "bg-green-500" },
-        { id: 4, text: "Card 4", color: "bg-teal-500" },
-        { id: 5, text: "Card 5", color: "bg-purple-500" },
-        { id: 6, text: "Card 6", color: "bg-pink-500" },
+        { id: 1, text: "General", color: "bg-blue-500" },
+        { id: 2, text: "Soccer", color: "bg-orange-500" },
+        { id: 3, text: "Basketball", color: "bg-green-500" },
+        { id: 4, text: "Tennis", color: "bg-teal-500" },
+        { id: 5, text: "Cricket", color: "bg-purple-500" },
+        { id: 6, text: "Badminton", color: "bg-pink-500" },
     ];
     return (
         <div>
-            <h3 className="text-2xl font-bold text-center">This is Categories section </h3>
+            <h2 className="text-3xl font-bold mt-9 mb-2">Visit All Categories</h2>
+      <p className="text-gray-600 mb-6">
+        Visit to see all Categories . Our collection is always up to date . You can purchage our product without any doubt. </p>
             <div className=" flex items-center justify-center ">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12 ">
                     {cards.map((card) => (
