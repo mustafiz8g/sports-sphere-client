@@ -4,6 +4,7 @@ import Navbar from "../Shared/Navbar";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../providers/AuthProvider";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 
 
@@ -64,7 +65,8 @@ const UpdateEqui = () => {
 
 
     return (
-        <div className=" ">
+     <Fade>
+           <div className=" ">
             <Navbar></Navbar>
 
             <div className="mx-auto w-11/12 space-y-5 bg-[#F2F9FF] md:p-7">
@@ -202,6 +204,7 @@ const UpdateEqui = () => {
 
             <Footer></Footer>
         </div>
+     </Fade>
     );
 };
 

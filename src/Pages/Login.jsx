@@ -7,6 +7,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "../Shared/Navbar";
+import { Fade } from "react-awesome-reveal";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -79,7 +80,8 @@ const Login = () => {
     }
 
     return (
-       <>
+      <Fade>
+         <>
          <Navbar></Navbar>
        <div className="w-11/12 mx-auto flex justify-center mt-20">
           
@@ -148,6 +150,7 @@ const Login = () => {
           </div>
       </div>
        </>
+      </Fade>
     );
 };
 

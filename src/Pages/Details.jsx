@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
+import { Fade } from "react-awesome-reveal";
 
 const ProductDetail = () => {
     const data = useLoaderData();
@@ -20,7 +21,8 @@ const ProductDetail = () => {
     } = data;
 
     return (
-        <div className=" bg-gray-50  px-4">
+      <Fade>
+          <div className=" bg-gray-50  px-4">
            {
             <div>
                  <Navbar></Navbar>
@@ -95,6 +97,7 @@ const ProductDetail = () => {
             </div>
             <Footer></Footer>
         </div>
+      </Fade>
     );
 };
 
