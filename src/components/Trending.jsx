@@ -43,10 +43,12 @@ const TrendingNow = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Left-side  */}
-        <div className="col-span-1 md:col-span-1 bg-cover bg-center rounded-lg">
-          <div className="">
-        
-            <h3 className="text-xl  font-bold">Tennis equipment</h3>
+        <div className="col-span-1 md:col-span-1 bg-cover bg-center rounded-lg relative overflow-hidden"
+          style={{
+            backgroundImage: "url('https://i.ibb.co.com/XjS6Q7X/Screenshot-2024-12-08-133914-removebg-preview-1.png')", 
+          }}>
+          <div className="absolute bottom-4 left-4 text-white">
+            <h3 className="text-xl font-bold">Tennis equipment</h3>
             <button className="mt-2 text-sm underline">More details →</button>
           </div>
         </div>
