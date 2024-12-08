@@ -20,7 +20,7 @@ const MyEquiCard = ({ equi, equis, setEquis }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4200/equi/${_id}`, {
+        fetch(`https://sports-sphere.vercel.app/equi/${_id}`, {
           method: "DELETE"
         })
           .then((res) => res.json())

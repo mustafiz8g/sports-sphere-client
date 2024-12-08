@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
     {
         path: '/allEqui',
         element: <AllEqui></AllEqui>,
-        loader:() => fetch('http://localhost:4200/equi')
+        loader:() => fetch('https://sports-sphere.vercel.app/equi')
     },
     {
         path: '/addEqui',
@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
     {
         path: '/allEqui/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader : ({params}) => fetch(`http://localhost:4200/equi/${params.id}`)
+        loader : ({params}) => fetch(`https://sports-sphere.vercel.app/equi/${params.id}`)
     },
 
     // for product details
@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
     {
         path: '/updateEqui/:id',
         element : <PrivateRoute><UpdateEqui></UpdateEqui></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:4200/equi/${params.id}`)
+        loader: ({ params }) => fetch(`https://sports-sphere.vercel.app/equi/${params.id}`)
 
     },
 

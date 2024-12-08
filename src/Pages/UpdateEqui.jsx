@@ -34,7 +34,7 @@ const UpdateEqui = () => {
       console.log(updatedEqui)
       
       // send data to the server
-      fetch(`http://localhost:4200/equi/${_id}`, {
+      fetch(`https://sports-sphere.vercel.app/equi/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type' : 'application/json'

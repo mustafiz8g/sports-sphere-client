@@ -29,7 +29,7 @@ const AddEqui = () => {
       console.log(newEqui)
       
       // send data to the server
-      fetch('http://localhost:4200/equi', {
+      fetch('https://sports-sphere.vercel.app/equi', {
         method: 'POST',
         headers: {
             'content-type' : 'application/json'

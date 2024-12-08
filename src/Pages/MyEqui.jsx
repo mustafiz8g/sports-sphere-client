@@ -18,7 +18,7 @@ const MyEqui = () => {
 
 
 useEffect(() => {
-    fetch(`http://localhost:4200/equi?email=${encodeURIComponent(loggedEmail)}`)
+    fetch(`https://sports-sphere.vercel.app/equi?email=${encodeURIComponent(loggedEmail)}`)
       .then(res => res.json()
       )
       .then((data) => {
@@ -46,14 +46,7 @@ useEffect(() => {
   return (
     <div>
       <Navbar />
-       {/* {
-        loggedEmail === equis.userEmail &&
-        <div className="text-center mt-6 mb-6">
-        <h2 className="text-2xl font-bold">
-          My Total Equipment: {equis.length}
-        </h2>
-      </div>
-       } */}
+ 
        {console.log(equis)}
       <div>
         {equis.length === 0 ? (
