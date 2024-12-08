@@ -1,10 +1,14 @@
 
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { Fade } from "react-awesome-reveal";
 
 const ProductDetail = () => {
+    const navigate = useNavigate();
+    const handleBack = () => {
+        navigate(-1)
+    }
     const data = useLoaderData();
     const {
         image,
@@ -23,12 +27,13 @@ const ProductDetail = () => {
     return (
       <Fade>
           <div className=" bg-gray-50  px-4">
-           {
-            <div>
+           
+            
                  <Navbar></Navbar>
-                </div>
-           }
+              
+  
             <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <button onClick={handleBack} className="btn btn-secondary btn-sm">Back</button>
                 {/* Image and Basic Info Section */}
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     {/* Product Image */}
@@ -65,7 +70,7 @@ const ProductDetail = () => {
                                         name="rating"
                                         className="mask mask-star bg-orange-500"
                                         defaultChecked={i + 1 === Math.round(rating)}
-                                        disabled
+                                      
                                     />
                                 ))}
                             </div>

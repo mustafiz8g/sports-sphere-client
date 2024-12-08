@@ -1,7 +1,4 @@
 
-
-import React from "react";
-
 const TrendingNow = () => {
   const products = [
     {
@@ -35,8 +32,13 @@ const TrendingNow = () => {
     },
   ];
 
+
+ 
+
+
   return (
     <div className="py-12 px-4 bg-white">
+     
       <h2 className="text-3xl font-bold mb-2">Trending now</h2>
       <p className="text-gray-600 mb-6">
         Discover whats rising to the top in the world of fashion, technology, and culture.
