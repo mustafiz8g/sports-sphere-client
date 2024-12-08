@@ -12,6 +12,10 @@ const Details = () => {
             <Navbar></Navbar>
                Detail Section
                {description}
+               <p>aaaaaaaaaaaaa {itemName}</p>
+               <p>aaaaaaaaaaaaa {price}</p>
+               <p>aaaaaaaaaaaaa {category}</p>
+               <p>aaaaaaaaaaaaa</p>
             <Footer></Footer>
         </div>
     );

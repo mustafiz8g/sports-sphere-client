@@ -10,31 +10,28 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const MyEqui = () => {
   const { user } = useContext(AuthContext);
-  const userEmail = user.email;
+  const loggedEmail = user.email;
 
-  const [equis, setEquis] = useState([]); 
+  const [equis, setEquis] = useState([null]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchEquipment = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:4200/myEqui?email=${encodeURIComponent(userEmail)}`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        setEquis(result); 
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchEquipment();
-  }, [userEmail]);
+
+useEffect(() => {
+    fetch(`http://localhost:4200/equi?email=${encodeURIComponent(loggedEmail)}`)
+      .then(res => res.json()
+      )
+      .then((data) => {
+        setEquis(data); 
+      })
+      .catch((err) => {
+        setError(err.message); 
+      })
+      .finally(() => {
+        setLoading(false); 
+      });
+  }, [loggedEmail]);
+  
 
   if (loading)
     return (
@@ -44,15 +41,20 @@ const MyEqui = () => {
     );
 
   if (error) return <p>Error: {error}</p>;
+  
 
   return (
     <div>
       <Navbar />
-      <div className="text-center mt-6 mb-6">
+       {/* {
+        loggedEmail === equis.userEmail &&
+        <div className="text-center mt-6 mb-6">
         <h2 className="text-2xl font-bold">
           My Total Equipment: {equis.length}
         </h2>
       </div>
+       } */}
+       {console.log(equis)}
       <div>
         {equis.length === 0 ? (
           <div className="flex flex-col justify-center items-center">

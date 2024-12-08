@@ -17,10 +17,12 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+       
         children: [
             {
                 path: '/',
                 element : <Home></Home>
+                
             }
         ]
     },
@@ -46,13 +48,21 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><MyEqui></MyEqui></PrivateRoute>,
         
     },
+    // product
+   
 
-    // for details 
+    // for all equipment details 
     {
         path: '/allEqui/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:4200/equi/${params.id}`)
     },
+
+    // for product details
+
+
+
+    
     
     // for updated
     {
