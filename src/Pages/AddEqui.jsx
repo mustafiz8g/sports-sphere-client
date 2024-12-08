@@ -187,3 +187,16 @@ const AddEqui = () => {
 };
 
 export default AddEqui;
+
+
+
+
+
+
+// https://i.ibb.co.com/1dbgZyY/Screenshot-2024-12-08-164028.png
+// https://i.ibb.co.com/xCyYCTn/Screenshot-2024-12-08-164148.png
+// https://i.ibb.co.com/t8vPYcP/Screenshot-2024-12-08-164324.png
+// https://i.ibb.co.com/VSFp0JP/Screenshot-2024-12-08-164651.png
+// https://i.ibb.co.com/RzD6f8L/Screenshot-2024-12-08-165047.png
+// https://i.ibb.co.com/FJ9HHCb/Screenshot-2024-12-08-165325.png
+// https://i.ibb.co.com/zhBsn5D/Screenshot-2024-12-08-165522.png

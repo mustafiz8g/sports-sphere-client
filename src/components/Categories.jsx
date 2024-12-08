@@ -18,7 +18,7 @@ const Categories = () => {
                     {cards.map((card) => (
                         <button
                             key={card.id}
-                            className={`${card.color} text-white text-2xl font-bold flex items-center justify-center h-32 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all`}
+                            className={`${card.color} text-white text-2xl font-bold flex items-center justify-center h-32 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105  transition-all`}
                            
                         >
                             {card.text}

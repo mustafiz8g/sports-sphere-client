@@ -4,8 +4,7 @@
 const Product = ({ product }) => {
     const { image, itemName, price, customization, rating } = product;
     return (
-        <div className="card w-80 bg-base-100 shadow-xl"> {/* প্রস্থ w-80 করা হয়েছে */}
-            {/* Product Image */}
+        <div className="card w-80 bg-base-100 shadow-xl"> 
             <figure className="px-10 pt-10">
                 <img src={image} alt={itemName} className="rounded-xl h-40 object-contain" />
             </figure>

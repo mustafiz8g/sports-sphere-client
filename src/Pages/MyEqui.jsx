@@ -45,35 +45,24 @@ useEffect(() => {
 
   return (
     <div>
-      <Navbar />
- 
-       {console.log(equis)}
-      <div>
-        {equis.length === 0 ? (
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-lg mt-6 mb-6">
-              You do not add equipment yet. Click below to add equipment.
-            </p>
-            <Link
-              to="/addEqui"
-              title="Add Equipment"
-              className="link link-secondary text-8xl  mb-6"
-            >
-              <VscEmptyWindow />
-            </Link>
-          </div>
-        ) : (
-          equis.map((equi) => (
-            <MyEquiCard
-              key={equi._id}
-              equi={equi}
-              equis={equis}
-              setEquis={setEquis} 
-            />
-          ))
-        )}
-      </div>
-      <Footer />
+        <Navbar></Navbar>
+
+       <div>
+    <h2 className="text-center text-4xl font-bold mt-8 mb-8">My All Equipment</h2>
+
+       </div>
+     <div className="w-11/12 mx-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5 grid-cols-1 ">
+
+     {
+        equis.map(equi => <MyEquiCard 
+            key={equi._id}
+            equi={equi}
+            equis={equis}
+            setEquis={setEquis} 
+        ></MyEquiCard>)
+       }
+     </div>
+     <Footer></Footer>
     </div>
   );
 };

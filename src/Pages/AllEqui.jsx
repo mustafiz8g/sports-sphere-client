@@ -17,7 +17,7 @@ const AllEqui = () => {
            th, td {
               padding: 8px;
              
-              text-align: center; 
+            
               border-bottom: 1px solid #DDD;
               }
             tr:hover {background-color: #fcf7ff;}
@@ -26,8 +26,8 @@ const AllEqui = () => {
 
             </style>
             <Navbar></Navbar>
-            <div className="text-center mt-6 mb-6">
-                <h2 className="text-2xl font-bold">Total Equipment : {equis.length}</h2>
+            <div className=" mt-6 mb-6">
+                <h2 className="text-2xl text-center font-bold">Total Equipment : {equis.length}</h2>
             </div>
 
             <div className="w-11/12 md:w-10/12 lg:w-10/12 mx-auto">
@@ -47,8 +47,8 @@ const AllEqui = () => {
                         equis.length == 0 ? (<p>no data</p>) : (
                             equis.map(equi => <tr key={equi._id}>
                                 <td>a</td>
-                                <td className="text-center align-middle ">
-                                    <div className="flex items-center justify-center gap-3">
+                                <td className=" ">
+                                    <div className="flex items-center  gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle h-12 w-12">
                                                 <img
@@ -62,8 +62,8 @@ const AllEqui = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="text-center align-middle  ">BDT {equi.price}</td>
-                                <td className="text-center align-middle  ">
+                                <td className="">BDT {equi.price}</td>
+                                <td className="">
                                     <Link to={`${equi._id}`}>
                                         <button className="btn btn-ghost btn-xs">details</button>
                                     </Link>
