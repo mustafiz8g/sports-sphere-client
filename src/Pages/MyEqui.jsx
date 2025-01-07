@@ -17,7 +17,7 @@ const MyEqui = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:4200/equi?email=${loggedEmail}`)
+    fetch(`https://sports-sphere.vercel.app/equi?email=${loggedEmail}`)
       .then(res => res.json())
       .then((data) => {
         setEquis(data);

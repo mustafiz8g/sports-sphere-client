@@ -31,7 +31,7 @@ const AddEqui = () => {
         console.log(newEqui)
 
         //  using axios        
-        axios.post('http://localhost:4200/equi', newEqui)
+        axios.post('https://sports-sphere.vercel.app/equi', newEqui)
             .then(data => {
                 console.log(data.data)
                 if (data.data.insertedId) {
