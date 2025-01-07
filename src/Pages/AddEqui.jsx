@@ -30,17 +30,17 @@ const AddEqui = () => {
         const newEqui = { image, itemName, category, price, description, customization, rating, processingTime, quantity, userEmail, userName }
         console.log(newEqui)
 
-//  using axios        
-        axios.post('http://localhost:4200/equi',newEqui)
-        .then(data => {
-            console.log(data.data)
-            if (data.data.insertedId) {
-                Swal.fire({
-                    title: "Equipment Added Successfully",
-                    icon: "success"
-                });
-            }
-        })
+        //  using axios        
+        axios.post('http://localhost:4200/equi', newEqui)
+            .then(data => {
+                console.log(data.data)
+                if (data.data.insertedId) {
+                    Swal.fire({
+                        title: "Equipment Added Successfully",
+                        icon: "success"
+                    });
+                }
+            })
 
 
 
@@ -50,10 +50,10 @@ const AddEqui = () => {
 
 
     return (
-        
+
         <div className=" ">
-                <Navbar></Navbar>
-                <Fade>
+            <Navbar></Navbar>
+            <Fade>
 
                 <div className="mx-auto w-11/12 space-y-5 md:p-7">
 
@@ -63,133 +63,133 @@ const AddEqui = () => {
                         <p className="text-center ">Welcome to the Add Equipment page! Here, you can add new items to your inventory by providing all the necessary details. Fill in the form fields, including the item name, category, description, price, rating, and stock status. You can also upload an image of the equipment and spec and make it available for purchase!</p>
                     </div>
                     <form onSubmit={handleAddEqui}>
-  <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
-      <label className="block font-bold">Image</label>
-      <input
-        type="text"
-        name="image"
-        placeholder="Enter image URL"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Item Name</label>
-      <input
-        type="text"
-        name="itemName"
-        placeholder="Enter Item Name"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Category Name</label>
-      <input
-        type="text"
-        name="category"
-        placeholder="Enter Category Name"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Price</label>
-      <input
-        type="number"
-        name="price"
-        placeholder="Enter Price"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Description</label>
-      <textarea
-        name="description"
-        placeholder="Enter Description"
-        className="textarea w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      ></textarea>
-    </div>
-    <div>
-      <label className="block font-bold">Customization</label>
-      <textarea
-        name="customization"
-        placeholder="Enter Customization Details"
-        className="textarea w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      ></textarea>
-    </div>
-    <div>
-      <label className="block font-bold">Rating (1-5)</label>
-      <input
-        type="number"
-        name="rating"
-        placeholder="Enter Rating"
-        min="1"
-        max="5"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Processing Time</label>
-      <input
-        type="text"
-        name="processingTime"
-        placeholder="Enter Processing Time"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">Stock Status</label>
-      <input
-        type="number"
-        name="quantity"
-        placeholder="Enter Available Product Quantity"
-        className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-        required
-      />
-    </div>
-    <div>
-      <label className="block font-bold">User Email</label>
-      <input
-        type="email"
-        name="userEmail"
-        value={user.email}
-        readOnly
-        className="input w-full border border-gray-300 rounded-md bg-gray-100 focus:outline-none"
-      />
-    </div>
-    <div>
-      <label className="block font-bold">User Name</label>
-      <input
-        type="text"
-        name="userName"
-        value={user.displayName}
-        readOnly
-        className="input w-full border border-gray-300 rounded-md bg-gray-100 focus:outline-none"
-      />
-    </div>
-    <input
-      className="col-span-2 btn btn-primary w-full mt-6 bg-gray-800 hover:bg-gray-700 text-white"
-      type="submit"
-      value="Add Product"
-    />
-  </div>
-</form>
+                        <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block font-bold">Image</label>
+                                <input
+                                    type="text"
+                                    name="image"
+                                    placeholder="Enter image URL"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Item Name</label>
+                                <input
+                                    type="text"
+                                    name="itemName"
+                                    placeholder="Enter Item Name"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Category Name</label>
+                                <input
+                                    type="text"
+                                    name="category"
+                                    placeholder="Enter Category Name"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Price</label>
+                                <input
+                                    type="number"
+                                    name="price"
+                                    placeholder="Enter Price"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Description</label>
+                                <textarea
+                                    name="description"
+                                    placeholder="Enter Description"
+                                    className="textarea w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label className="block font-bold">Customization</label>
+                                <textarea
+                                    name="customization"
+                                    placeholder="Enter Customization Details"
+                                    className="textarea w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label className="block font-bold">Rating (1-5)</label>
+                                <input
+                                    type="number"
+                                    name="rating"
+                                    placeholder="Enter Rating"
+                                    min="1"
+                                    max="5"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Processing Time</label>
+                                <input
+                                    type="text"
+                                    name="processingTime"
+                                    placeholder="Enter Processing Time"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">Stock Status</label>
+                                <input
+                                    type="number"
+                                    name="quantity"
+                                    placeholder="Enter Available Product Quantity"
+                                    className="input w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">User Email</label>
+                                <input
+                                    type="email"
+                                    name="userEmail"
+                                    value={user.email}
+                                    readOnly
+                                    className="input w-full border border-gray-300 rounded-md bg-gray-100 focus:outline-none"
+                                />
+                            </div>
+                            <div>
+                                <label className="block font-bold">User Name</label>
+                                <input
+                                    type="text"
+                                    name="userName"
+                                    value={user.displayName}
+                                    readOnly
+                                    className="input w-full border border-gray-300 rounded-md bg-gray-100 focus:outline-none"
+                                />
+                            </div>
+                            <input
+                                className="col-span-2 btn btn-primary w-full mt-6 bg-gray-800 hover:bg-gray-700 text-white"
+                                type="submit"
+                                value="Add Product"
+                            />
+                        </div>
+                    </form>
 
-                   
+
                 </div>
 
 
 
                 <Footer></Footer>
-        </Fade>
-            </div>
+            </Fade>
+        </div>
     );
 };
 
