@@ -41,7 +41,7 @@ const Navbar = () => {
 
     return (
        
-            <div className="w-11/12 bg-base-300 mx-auto z-20 sticky top-0  navbar flex justify-between mt-4">
+            <div className="w-11/12 bg-base-300 mx-auto z-20 sticky top-0  navbar flex justify-between mt-4 rounded-lg">
 
                 <div className="first">
                     <div className="dropdown">
