@@ -4,13 +4,13 @@ import { BsTwitterX } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className='p-5  '>
+    <div className='p-5 ' id="contact">
 
 
 
-      <footer className="w-11/12 mx-auto bg-slate-700 footer text-white  p-10 rounded-t-lg">
+      <footer className="w-11/12 mx-auto  footer bg-base-200   p-10 rounded-t-lg">
         <nav className="w-56">
-        <h1 className="text-4xl text-white text-center">Sport Sphere</h1>
+        <h1 className="text-4xl  text-center">Sport Sphere</h1>
 
         <p>Sentiments two occasional affronting solicitude travelling and one contrasted fortune day.</p>
         </nav>
@@ -31,7 +31,7 @@ const Footer = () => {
           <h6 className="footer-title">Newsletter</h6>
           <fieldset className="form-control w-80">
             <label className="label">
-              <span className="label-text text-white">Enter your email address</span>
+              <span className="label-text ">Enter your email address</span>
             </label>
             <div className="join">
               <input
@@ -46,7 +46,7 @@ const Footer = () => {
       </footer>
 
       
-      <footer className="w-11/12 mx-auto footer bg-neutral text-neutral-content items-center p-4 flex flex-col justify-around md:flex-row rounded-b-lg">
+      <footer className="w-11/12 mx-auto footer  bg-base-300 items-center p-4 flex flex-col justify-around md:flex-row rounded-b-lg">
         <aside className="grid-flow-col items-center">
           <svg
             width="36"

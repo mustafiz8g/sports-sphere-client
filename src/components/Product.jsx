@@ -39,7 +39,6 @@ const Product = ({ product }) => {
                     <Link to={`allEqui/${_id}`}>
                         <button className="btn btn-sm btn-outline btn-primary">Details</button>
                     </Link>
-                    <button className="btn btn-sm btn-success">Add to Cart</button>
                 </div>
             </div>
         </div>

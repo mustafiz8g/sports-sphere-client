@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import ThemeToggle from "../Pages/ThemeToggle";
+import './Navbar.css'
+
 
 
 const Navbar = () => {
@@ -22,16 +25,23 @@ const Navbar = () => {
     const navOptions = < >
         <li><NavLink className='font-bold text-base' to='/'>Home</NavLink></li>
         <li><NavLink className='font-bold text-base' to='/allEqui'>All Equi</NavLink></li>
-        <li><NavLink className='font-bold text-base' to='/addEqui'>Add  Equi</NavLink></li>
-        <li><NavLink className='font-bold text-base' to='/myEqui'>My Equi</NavLink></li>
+        {
+        user && <>
+  <li><NavLink className='font-bold text-base' to='/addEqui'>Add  Equi</NavLink></li>
+  <li><NavLink className='font-bold text-base' to='/myEqui'>My Equi</NavLink></li>
+        </>
+      }
+        <li><a className='font-bold text-base' href="#contact">Contact</a></li>
+       <li className=""><ThemeToggle></ThemeToggle></li>
+     
         
       
 
     </>
 
     return (
-        <div>
-            <div className="w-11/12 mx-auto navbar flex justify-between mt-4">
+       
+            <div className="w-11/12 bg-base-300 mx-auto z-20 sticky top-0  navbar flex justify-between mt-4">
 
                 <div className="first">
                     <div className="dropdown">
@@ -41,15 +51,15 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ">
+                            className="dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow ">
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-3xl">Sports Sphere</a>
+                    <a className="btn btn-ghost text-3xl"><span className="text-green-600">Sports</span> Sphere</a>
                 </div>
                 <div>
                     <div className="second hidden md:flex">
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="flex justify-center items-center gap-2 px-1">
                             {navOptions}
                         </ul>
 
@@ -75,7 +85,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-        </div>
+     
     );
 };
 

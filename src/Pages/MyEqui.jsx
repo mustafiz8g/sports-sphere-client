@@ -18,7 +18,7 @@ const MyEqui = () => {
 
 
 useEffect(() => {
-    fetch(`https://sports-sphere.vercel.app/equi?email=${encodeURIComponent(loggedEmail)}`)
+    fetch(`http://localhost:4200/equi?email=${loggedEmail}`)
       .then(res => res.json()
       )
       .then((data) => {

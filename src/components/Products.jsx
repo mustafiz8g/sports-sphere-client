@@ -11,7 +11,7 @@ const Products = () => {
     const [error, setError] = useState(null); 
 
     useEffect(() => {
-        fetch("https://sports-sphere.vercel.app/product")
+        fetch("http://localhost:4200/product")
           .then(res => res.json())
           .then((data) => {
             setProducts(data);

@@ -11,7 +11,9 @@ import Lotties from "../components/Lotties";
 const Home = () => {
     return (
         <div className="w-11/12 mx-auto">
-            <Fade>
+            <Fade
+            
+            >
           
                 <Lotties></Lotties>
                 <Slider></Slider>

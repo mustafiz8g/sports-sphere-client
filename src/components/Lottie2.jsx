@@ -1,7 +1,7 @@
 
 
 import { useLottie, useLottieInteractivity } from "lottie-react";
-import loti1 from '../../src/assets/badminton.json'
+import loti1 from '../assets/badminton.json'
 const style = {
   height: 100,
  
