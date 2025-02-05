@@ -6,9 +6,9 @@
 
 ## 🌐 Live Demo  
 
-🔗 **[sports-sphere Live](#)** *(Replace with actual deployed URL)*  
+🔗 **[sports-sphere Live](#)** https://sports-sphere-c4e2f.web.app/
 
-- **Server Repository:** [GitHub Link](#) *(Replace with actual repository URL)*  
+- **Server Repository:** https://github.com/mustafiz8g/sports-sphere-server
 
 ---
 
