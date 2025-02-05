@@ -1,4 +1,4 @@
-## 🏅 EquiSports - Sports Equipment Online Store  
+## 🏅 sports-sphere - Sports Equipment Online Store  
 
 ### A dynamic e-commerce platform for sports accessories, allowing users to browse, purchase, and manage equipment across various sports categories. Built with the MERN stack, the platform ensures a smooth shopping experience with authentication and product management features.  
 
@@ -6,7 +6,7 @@
 
 ## 🌐 Live Demo  
 
-🔗 **[EquiSports Live](#)** *(Replace with actual deployed URL)*  
+🔗 **[sports-sphere Live](#)** *(Replace with actual deployed URL)*  
 
 - **Server Repository:** [GitHub Link](#) *(Replace with actual repository URL)*  
 
@@ -69,32 +69,49 @@
 
 ---
 
-## ⚙️ Installation & Setup  
+## ⚙️ Installation & Setup
 
-### **1️⃣ Clone the Repository**  
+### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/equisports-client.git
-git clone https://github.com/yourusername/equisports-server.git
-2️⃣ Install Dependencies
-Frontend:
-bash
-Copy
-Edit
-cd equisports-client
-npm install
-Backend:
-bash
-Copy
-Edit
-cd equisports-server
-npm install
-3️⃣ Configure Environment Variables
-Create a .env file in both client and server directories with the required API keys.
+git clone https://github.com/yourusername/sports-sphere-client.git
+git clone https://github.com/yourusername/sports-sphere-server.git
+```
 
-Frontend (equisports-client/.env)
-plaintext
-Copy
-Edit
+### **2️⃣ Install Dependencies**
+ "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "@headlessui/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@tanstack/react-query": "^5.64.2",
+    "axios": "^1.7.9",
+    "firebase": "^11.2.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^8.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-hot-toast": "^2.5.1",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.1.3",
+    "react-spinners": "^0.15.0",
+    "sort-by": "^0.0.2",
+    "sweetalert2": "^11.15.10",
+    "swiper": "^11.2.1"
+#### Frontend:
+```bash
+cd sports-sphere-client
+npm install
+```
+#### Backend:
+```bash
+cd sports-sphere-server
+npm install
+```
+
+### **3️⃣ Configure Environment Variables**
+Create a `.env` file in both **client** and **server** directories with the required API keys.
+
+#### **Frontend (`sports-sphere-client/.env`)**
+```plaintext
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
@@ -102,50 +119,32 @@ VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
 VITE_FIREBASE_APP_ID=your_firebase_app_id
 VITE_BACKEND_URL=http://localhost:5000
-Backend (equisports-server/.env)
-plaintext
-Copy
-Edit
+```
+
+#### **Backend (`sports-sphere-server/.env`)**
+```plaintext
 MONGO_URI=your_mongodb_connection_uri
 JWT_SECRET=your_jwt_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
 CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-4️⃣ Start the Development Servers
-Frontend:
-bash
-Copy
-Edit
-npm run dev
-Backend:
-bash
-Copy
-Edit
-npm run start
-🖼️ Project Screenshots
-(Include relevant screenshots here to showcase the UI and features.)
+```
 
-🔌 API Endpoints
-User Authentication
-Method	Endpoint	Description
-POST	/api/auth/signup	Register a new user
-POST	/api/auth/login	User login & JWT generation
-GET	/api/auth/user	Get logged-in user details
-Sports Equipment
-Method	Endpoint	Description
-GET	/api/equipment	Get all sports equipment
-POST	/api/equipment	Add new equipment (Private Route)
-GET	/api/equipment/:id	Get equipment details
-DELETE	/api/equipment/:id	Delete equipment (Private Route)
-PUT	/api/equipment/:id	Update equipment details
-Wishlist & Purchase
-Method	Endpoint	Description
-POST	/api/wishlist	Add equipment to wishlist
-DELETE	/api/wishlist/:id	Remove from wishlist
-POST	/api/purchase	Purchase equipment
-GET	/api/purchase	Get purchase history
-Reviews
-Method	Endpoint	Description
-POST	/api/reviews	Add a review
-GET	/api/reviews/:equipmentId	Get reviews for equipment
-DELETE	/api/reviews/:id	Delete review (Private Route)
+### **4️⃣ Start the Development Servers**
+#### Frontend:
+```bash
+npm run dev
+```
+#### Backend:
+```bash
+npm run start
+```
+
+---
+
+## 🖼️ Project Screenshots
+
+_Add screenshots here to showcase UI and features._
+
+---
